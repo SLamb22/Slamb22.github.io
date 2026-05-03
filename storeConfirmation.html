@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Order Confirmation | Sweet's Bed and Rolls</title>
+  <meta charset="utf-8">
+  <link href="styles/styles.css" rel="stylesheet">
+  <script defer>
+    function loadOrder() {
+      const data = JSON.parse(localStorage.getItem("orderData"));
+
+      if (!data) {
+        document.getElementById("orderSummary").innerHTML =
+          "<p>No order found.</p>";
+        return;
+      }
+
+      let output = "<h3>Items Ordered</h3>";
+      output += "<table border='1'><tr><th>Item</th><th>Options</th><th>Qty</th><th>Total</th></tr>";
+
+      let total = 0;
+
+      data.cart.forEach(item => {
+        let itemTotal = item.price * item.quantity;
+        total += itemTotal;
+
+        output += `
+          <tr>
+            <td>${item.product}</td>
+            <td>${item.size || ""} ${item.color || ""}</td>
+            <td>${item.quantity}</td>
+            <td>$${itemTotal}</td>
+          </tr>
+        `;
+      });
+
+      output += "</table>";
+      output += `<p><strong>Order Total: $${total}</strong></p>`;
+
+      output += "<h3>Billing Info</h3>";
+      output += `<p>${data.billing.name}<br>
+                 ${data.billing.email}<br>
+                 ${data.billing.phone}</p>`;
+
+      output += "<h3>Shipping Info</h3>";
+      output += `<p>${data.shipping.shipName}<br>
+                 ${data.shipping.shipEmail}<br>
+                 ${data.shipping.shipPhone}</p>`;
+
+      document.getElementById("orderSummary").innerHTML = output;
+
+      // optional: clear cart after showing
+      localStorage.removeItem("cart");
+    }
+
+    window.onload = loadOrder;
+  </script>
+</head>
+
+<body>
+<div id="wrapper">
+
+<header>
+  <h1>Sweet's Bed and Rolls</h1>
+</header>
+
+<nav>
+<ul>
+	<li><a href="index.html">Home</a></li> <!-- Links to Index -->
+	<li><a href="rooms/Single.html">Single Styled Room</a></li> <!-- Links to room1 -->
+	<li><a href="rooms/Family.html">Family Styled Room</a></li> <!-- Links to room 2 -->
+	<li><a href="events/special_event.html">Weekend Events</a></li> <!-- Links to weekend events -->
+	<li><a href="contact.html">Contact</a></li> <!-- Links to contacts -->
+	<li><a href="reviews.html">Reviews</a></li>
+	<li><a href="gallery.html">Gallery</a></li>
+	<li><a href="store.html">Store</a></li>
+</ul>
+</nav>
+
+<main>
+
+<h2>Order Confirmation</h2>
+<p>Thank you for your purchase!</p>
+
+<div id="orderSummary" class="review"></div>
+
+</main>
+
+<footer>
+  Copyright &copy; 2025
+</footer>
+
+</div>
+</body>
+</html>
