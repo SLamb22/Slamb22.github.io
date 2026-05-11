@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <title>Sweet's Bed and Rolls | Single Styled Room</title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="../styles/styles.css" rel="stylesheet">
+
+  <script src="../scripts/E_Cost.js" defer></script>
+
+</head>
+
+<body>
+
+<div id="wrapper">
+
+  <!-- HEADER -->
+  <header>
+    <h1>
+      <img src="../images/bread_roll.png"
+           alt="Sweet's Bed and Rolls logo"
+           width="80"
+           height="80">
+
+      Sweet's Bed and Rolls
+
+      <img src="../images/bread_roll.png"
+           alt="Sweet's Bed and Rolls logo"
+           width="80"
+           height="80">
+    </h1>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <ul>
+      <li><a href="../index.html">Home</a></li>
+      <li><a href="Single.html">Single Styled Room</a></li>
+      <li><a href="Family.html">Family Styled Room</a></li>
+      <li><a href="../events/special_event.html">Weekend Events</a></li>
+      <li><a href="../contact.html">Contact</a></li>
+      <li><a href="../reviews.html">Reviews</a></li>
+      <li><a href="../gallery.html">Gallery</a></li>
+      <li><a href="../store.html">Store</a></li>
+      <li><a href="../Map.html">Location & Weather</a></li>
+    </ul>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main>
+
+    <section class="room-hero">
+
+      <img src="../images/Single_Room.jpg"
+           alt="Single styled luxury room"
+           class="room-image">
+
+      <div class="room-text">
+
+        <h2>Single Styled Bedroom</h2>
+
+        <p>
+          Our single styled bedroom offers a cozy and elegant
+          experience with a king-sized bed, private bathroom,
+          overhead shower, bath, closet space, and kitchenette.
+        </p>
+
+        <p>
+          Perfect for solo travelers or couples seeking
+          comfort, relaxation, and a beautiful atmosphere.
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- FEATURES -->
+    <section class="feature-grid">
+
+      <div class="feature-card">
+        <h3>Luxury Comfort</h3>
+        <p>Relax in a peaceful suite with premium bedding and furnishings.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Private Amenities</h3>
+        <p>Includes bathroom, shower, bath, closets, and kitchenette.</p>
+      </div>
+
+      <div class="feature-card">
+        <h3>Affordable Stay</h3>
+        <p>Designed to give guests a compact but high-quality experience.</p>
+      </div>
+
+    </section>
+
+    <!-- PRICING -->
+    <section class="pricing-section">
+
+      <h2>Pricing Information</h2>
+
+      <ul class="pricing-list">
+        <li>Entry Fee: <strong>$75 per guest</strong></li>
+        <li>Daily Room Fee: <strong>$150 per day</strong></li>
+        <li>Optional Cleaning Service: <strong>$100</strong></li>
+        <li>Optional TV Access: <strong>$150</strong></li>
+      </ul>
+
+    </section>
+
+    <!-- ESTIMATOR -->
+    <section id="flow" class="calculator-box">
+
+      <h2>Estimate Your Stay Cost</h2>
+
+      <label for="days">Number of Days</label>
+
+      <input type="number"
+             id="days"
+             value="1"
+             min="1"
+             oninput="calculateTotal_S()">
+
+      <label for="people">Number of Guests</label>
+
+      <input type="number"
+             id="people"
+             value="1"
+             min="1"
+             oninput="calculateTotal_S()">
+
+      <label class="checkbox-label">
+        <input type="checkbox"
+               id="cleaning"
+               onchange="calculateTotal_S()">
+
+        Add Cleaning Service ($100)
+      </label>
+
+      <label class="checkbox-label">
+        <input type="checkbox"
+               id="tv"
+               onchange="calculateTotal_S()">
+
+        Add TV Access ($150)
+      </label>
+
+      <h3 id="result" class="result-box">
+        Estimated Total: $0
+      </h3>
+
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    Copyright &copy; 2026 Sweet's Bed and Rolls
+  </footer>
+
+</div>
+
+</body>
+</html>
